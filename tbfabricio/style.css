@@ -20,9 +20,13 @@ html, body {
     gap: 30px;
   }
 
-  .login-box, .info {
+  .login-box{
     width: 90%;
     max-width: 400px;
+  }
+
+  .info{
+    display: none;
   }
 }
 

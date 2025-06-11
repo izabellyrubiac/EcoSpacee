@@ -16,6 +16,7 @@
         <h1 class="logo-text">EcoSpace</h1>
       </div>
     </nav>
+    
 
     <main class="container">
     <section class="login-box">
@@ -28,9 +29,9 @@
 
       <a href="#" class="link-senha">Esqueci minha senha</a>
     <div class="btn-div">
-      <a href="entrar.html"><button class="btn-confirmar">Confirmar</button></a>
+      <button class="btn-confirmar" type="submit" onclick="validar(); return false">Confirmar</button>
       <span class="ou">ou</span>
-      <button class="btn-criar">CriarConta</button>
+      <button class="btn-criar" onclick="criar()">Criar Conta</button>
     </div>
     </section>
 
@@ -38,10 +39,12 @@
       <h2>Tudo no mesmo espaço!</h2>
       <br>
       <p>
-        O Ecospace é um projeto destinado a unir organizações e recicladoras em um único lugar. 
+        O EcoSpace é um projeto destinado a unir organizações e recicladoras em um único lugar. 
         Aqui você pode localizar pontos de coleta com muito mais eficiência.
       </p>
     </section>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
