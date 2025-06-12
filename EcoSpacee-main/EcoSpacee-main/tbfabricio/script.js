@@ -5,10 +5,12 @@ function validar()
 
     if (login == "admin@fortes.com.br" && senha == "123456")
     {
+        alert('Sucesso!')
         location.href = "entrar-admin.html"
     }
     else if (login == "cooperativas@fortes.com.br" && senha == "123456")
     {
+        alert('Sucesso!')
         location.href = "entrar-coop.html"
     }
     else 
@@ -17,7 +19,8 @@ function validar()
     }
     }
 
-function criar ()
+function criar()
 {
     location.href = "criar.html"
 }
+
