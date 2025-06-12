@@ -54,3 +54,42 @@ html, body {
   font-size: 40px;
   font-weight: normal;
 }
+
+
+
+.pesq-mapa {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  padding-left: 25%;
+  align-items: end;
+}
+
+#iconepesq {
+  padding: 7px;
+  width: 35px;
+}
+
+.div-pesq {
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  width: 450px;
+}
+
+#cxpesquisa {
+  border: none;
+  width: 300px;
+  outline: none;
+ 
+}
+
+
+#mapa {
+  border-radius: 20px;
+  width: 450px;
+}
