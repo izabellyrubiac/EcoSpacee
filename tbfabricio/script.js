@@ -19,7 +19,8 @@ function validar()
     }
     }
 
-function criar ()
+function criar()
 {
     location.href = "criar.html"
 }
+
