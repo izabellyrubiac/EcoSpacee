@@ -5,7 +5,7 @@ function validar()
 
     if (login == "admin@fortes.com.br" && senha == "123456")
     {
-        location.href = "entrar-admin.html"
+        location.href = "entrar.html"
     }
     else if (login == "cooperativas@fortes.com.br" && senha == "123456")
     {
