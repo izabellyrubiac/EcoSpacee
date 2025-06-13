@@ -22,3 +22,15 @@ function criar()
     location.href = "criar.html"
 }
 
+function criarus()
+{
+    location.href = "cadastro-user.html"
+}
+
+function criarorg(){
+    location.href = "cadastro-org.html"
+}
+
+function criarcoop(){
+    location.href = "cadastro-coop.html"
+}
