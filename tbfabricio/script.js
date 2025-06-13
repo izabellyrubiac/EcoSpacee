@@ -34,3 +34,7 @@ function criarorg(){
 function criarcoop(){
     location.href = "cadastro-coop.html"
 }
+
+function adicionarponto(){
+    location.href = "adicionarponto.html"
+}
