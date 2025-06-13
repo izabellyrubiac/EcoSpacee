@@ -85,6 +85,7 @@ html, body {
 .tipo-conta{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   justify-items: center;
   align-items: center;
   width: 20vw;
@@ -98,10 +99,11 @@ html, body {
   display: flex;
   text-align: center;
   font-weight: 550;
-  font-size: x-large;
+  font-size: xx-large;
 }
 .tipo-conta p{
-  padding: 20px;
+  font-size: x-large;
+  padding: 40px;
   text-align: center;
 }
 
@@ -148,3 +150,16 @@ html, body {
   align-items: center;
 }
 
+.btn-criar {
+  background-color: #0099ff;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  width: 200px;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 15px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
