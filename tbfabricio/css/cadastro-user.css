@@ -93,7 +93,7 @@ html, body {
     background-color: #ffffff;
     padding: 50px;
     border-radius: 10px;
-    height: 800px;
+    height: 1000px;
     margin-top: 20px;
     margin-bottom: 20px;
     justify-content: space-between;
@@ -103,8 +103,9 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100px;
+    height: 200px;
 }
+
 
 .endereco p{
     font-size: x-large;
@@ -130,4 +131,35 @@ html, body {
     width: 100%;
     justify-content: space-around;
     justify-items: center;
+    
 }
+
+#cancelar, #salvar {
+  width: 120px;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+#salvar{
+  background-color: #1e7e34;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+#cancelar{
+  background-color: #af210f;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+.cadastro-box input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px -5px 2px -2px green inset;
+}
+
