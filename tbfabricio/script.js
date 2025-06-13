@@ -9,7 +9,7 @@ function validar()
     }
     else if (login == "cooperativas@fortes.com.br" && senha == "123456")
     {
-        location.href = "entrar-coop.html"
+        location.href = "recicladoras.html"
     }
     else 
     {
