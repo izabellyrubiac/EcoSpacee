@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/criar.css">
+    <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+    <title>EcoSpace</title>
+</head>
+<body>
+    <nav class="navbarr">
+        <img src="imagens/logo.png" alt="logo" class="logo">
+        <div class="lt">
+        <h1 class="logo-text">EcoSpace</h1>
+      </div>
+      <div id="possuo-conta">
+        <a href="./index.html"><button onclick="">Já possuo uma conta</button></a>
+      </div>
+    </nav>
+   
+    <section class="contas">
+  
+      <div class="tipo-conta">
+          <div>
+            <div id="p-fisica"><h3>Usuário</h3></div>
+          <div><p>Cadastrar como <strong style="color: rgba(42, 163, 4);">pessoa física</strong></p></div>
+          </div>
+          <div><button class="btn-criar" onclick="criarus()">Criar Conta</button></div>
+      </div>
+      <div class="tipo-conta">
+          <div>
+            <div id="org"><h3>Organização</h3></div>
+          <div><p>Cadastrar como <strong style="color: rgba(40, 165, 242)">empresa</strong></p></div>
+          </div>
+          <div><button class="btn-criar" onclick="criarorg()">Criar Conta</button></div>
+      </div>
+      <div class="tipo-conta">
+          <div>
+            <div id="rec"><h3>Recicladora</h3></div>
+          <div><p>Cadastrar como <strong style="color: rgba(42, 163, 4);">cooperativa</strong></p></div>
+          </div>
+          <div><button class="btn-criar" onclick="criarcoop()">Criar Conta</button></div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

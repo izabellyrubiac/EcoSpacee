@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/adicionarponto.css">
+    <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+    <title>EcoSpace</title>
+</head>
+<body>
+    <nav class="navbarr">
+        <a href="entrar.html"><img src="imagens/logo.png" alt="logo" class="logo"></a>
+        <div class="lt">
+        <h1 class="logo-text">EcoSpace</h1>
+      </div>
+    </nav>
+
+    <div id="menu-barra">
+                <button id="open_btn" style="border: none; background: none;" title="Menu">
+                    <img src="imagens/iconemenu.png" alt="menu" id="open_btn_icon">
+                </button>
+                    <div id="barra">
+            
+                        <ul style="list-style-type: none;">
+                            <li>
+                                 <a href="entrar.html">
+                                    <img src="imagens/Group 87.png" alt="icon">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="imagens/Group 63.png" alt="icon">
+                                 </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="imagens/Group 86.png" alt="icon">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="recicladoras.html">
+                                    <img src="imagens/Group 13.png" alt="icon">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="imagens/Group 65.png" alt="icon">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="index.html">
+                                    <img src="imagens/Group 20.png" alt="icon">
+                                </a>
+                            </li>
+                        </ul>
+
+            
+                    </div>
+            </div>
+
+    <main id="container">
+      
+      <div>
+        <h2 id="titulo">Registrar ponto de coleta</h2><br>
+        <section class="registrar">
+              <form action="">
+                      <div id="dados">
+                      <div class="endereco">
+                        <p>Endereço:</p>
+                        <input type="text" name="rua" placeholder="Rua">
+                        <input type="text" name="bairro" placeholder="Bairro">
+                        <input type="text" name="cidade" placeholder="Cidade">
+                      </div><br>
+
+                      <label for="cep">CEP:</label><br>
+                      <input type="text" id="cep" pattern="\d{5}-?\d{3}" placeholder="00000-000"><br>
+                  </div>
+                
+                
+                  <div class="botoes">
+                    <button type="reset" id="cancelar">Cancelar</button>
+                    <button type="submit" id="salvar">Salvar</button>
+                  </div>
+              </form>
+        </section>
+      </div>
+    </main>
+<script>
+  const btn = document.getElementById("open_btn");
+  const barra = document.getElementById("barra");
+
+  btn.addEventListener("click", () => {
+    barra.classList.toggle("ativo");
+  });
+</script>
+</body>
+</html>    

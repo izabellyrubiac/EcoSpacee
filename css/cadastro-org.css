@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+html, body {
+  height: max-content;
+  margin: 0;
+  padding: 0;
+  padding-top: 60px;
+   background: linear-gradient(to bottom, 
+  rgba(200, 240, 255, 1),
+  rgba(0, 122, 199, 1));
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .login-box, .info {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+.navbarr {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background-color: #ffffff;
+  position: fixed; 
+  width: 100%;
+  height: 100px;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo{
+  margin: none;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.lt {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  color: #28a745;
+  font-size: 40px;
+  font-weight: normal;
+}
+
+
+#possuo-conta {
+    margin-left: auto;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#possuo-conta button {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e9e9e9;
+}
+
+#possuo-conta button:hover{
+  background-color: #f7f7f7;
+}
+
+.cadastro-box{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: start;
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 10px;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.endereco{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.endereco p{
+    font-size: x-large;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url(../imagens/background-ecospace.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.cadastro-box label{
+    font-size: x-large;
+}
+
+.cadastro-box h2{
+    font-size: xx-large;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    justify-items: center;
+}
+
+#cancelar, #salvar {
+  width: 120px;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+#salvar{
+  background-color: #1e7e34;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+#cancelar{
+  background-color: #af210f;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+.cadastro-box input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px -5px 2px -2px green inset;
+}
+
+
+.imputs{
+    display: none;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 5px;
+    border-color: lightblue;
+    background-color: yellow;
+}
+.span-required{
+  font-size: 12px;
+  margin: 0px 0 0 1px;
+  color:red;
+  display: none;
+}

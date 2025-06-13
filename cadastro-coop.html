@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/cadastro-coop.css">
+    <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+    <title>EcoSpace</title>
+</head>
+<body>
+    <nav class="navbarr">
+        <img src="imagens/logo.png" alt="logo" class="logo">
+        <div class="lt">
+        <h1 class="logo-text">EcoSpace</h1>
+      </div>
+      <div id="possuo-conta">
+        <a href="./index.html"><button onclick="">Já possuo uma conta</button></a>
+      </div>
+    </nav>
+
+    <main class="container">
+            <form id="form-cadastro-cooperadora">
+                <section class="cadastro-box">
+                    <h2>Cadastro de cooperadora</h2>
+                        <label for="Nome">Nome:</label>
+                        <input type="text" id="nome" class="inputs required" oninput="nameValidate()">
+                        <span class="span-required">Minimo de 3 caracteres</span>
+
+                        <label for="E-mail">E-mail:</label>
+                        <input type="email" id="email" class="inputs required" oninput="emailValidate()">
+                        <span class="span-required">Email inválido</span>
+
+                        <label for="Telefone">Telefone:</label>
+                        <input type="tel" id="telefone" class="inputs required" oninput="telefoneValidate()">
+                        <span class="span-required">Número de telefone inválido</span>
+
+                        <label for="cnpj">CNPJ:</label>
+                        <input type="text" id="cnpj" pattern="\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2}" placeholder="00.000.000/0000-00" maxlength="18" class="inputs required" oninput="cnpjValidate()">
+                        <span class="span-required">CNPJ inválido</span>
+
+                        <div class="endereco">
+                            <p>Endereço:</p>
+
+                            <input type="text" name="rua" placeholder="Rua" class="inputs required" oninput="ruaValidate()">
+                            <span class="span-required">Rua deve ter no minimo 3 caracteres</span>
+
+                            <input type="text" name="bairro" placeholder="Bairro" class="inputs required" oninput="bairroValidate()" >
+                            <span class="span-required">Bairro deve ter no minimo 3 caracteres</span>
+
+                            <input type="text" name="cidade" placeholder="Cidade" class="inputs required" oninput="cidadeValidate()">
+                            <span class="span-required">Cidade deve ter no minimo 3 carcteres</span>
+                        </div>
+
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" pattern="\d{5}-?\d{3}" placeholder="00000-000" class="inputs required" oninput="cepValidate()">
+                        <span class="span-required">CEP inválido</span>
+
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" class="inputs required" oninput="senhaValidate()">
+                        <span class="span-required">Senha deve conter no minimo 8 caracteres</span>
+
+                        <label for="confirmar-senha">Confirmar senha:</label>
+                        <input type="password" id="confirmar-senha" name="confirmar-senha" class="inputs required" oninput="confirmacaoValidate()">
+                        <span class="span-required">Deve ser idêntica ao campo anterior</span>
+
+                        <div class="botoes">
+                        <button type="reset" id="cancelar">Cancelar</button>
+                        <button type="submit" id="salvar">Salvar</button>
+                        </div>
+                </section>
+            </form>
+    </main>
+
+</body>
+<script>
+    
+    const form   = document.getElementById('form-cadastro-cooperadora');
+    const campos = document.querySelectorAll('.required');
+    const span  = document.querySelectorAll('.span-required');
+    const emailregex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        nameValidate();
+        emailValidate();
+        telefoneValidate();
+        cnpjValidate();
+        ruaValidate();
+        bairroValidate();
+        cidadeValidate();
+        cepValidate();
+        senhaValidate();
+        confirmacaoValidate();
+    });
+
+    function setError(index){
+        campos[index].style.border = '2px solid #FFFF00';
+        span[index].style.display = 'block';
+
+    }
+     
+    function removeError(index){
+        campos[index].style.border = '';
+        span[index].style.display = 'none';
+    }
+    
+    function nameValidate(){
+        if(campos[0].value.length < 3)
+    {
+        setError(0);
+    }
+        else
+    {
+        removeError(0)
+    }
+    }
+
+    function emailValidate(){
+        if (!emailregex.test(campos[1].value))
+    {
+        setError(1);
+    }
+    else
+    {
+        removeError(1);
+    }
+    }
+
+    function telefoneValidate(){
+        if(campos[2].value.length < 10 || campos[2].value.length > 11)
+    {
+        setError(2);
+    }
+        else
+    {
+        removeError(2);
+    }
+    }
+    
+    function cnpjValidate(){
+        if(campos[3].value.length < 14)
+    {
+        setError(3);
+    }
+        else
+    {
+        removeError(3);
+    }
+    }
+
+    function ruaValidate(){
+        if(campos[4].value.length < 3)
+    {
+        setError(4);
+    }
+        else
+    {
+        removeError(4);
+    }
+    }
+
+    function bairroValidate(){
+        if(campos[5].value.length < 3)
+    {
+        setError(5);
+    }
+        else
+    {
+        removeError(5);
+    }
+    }
+
+    function cidadeValidate(){
+        if(campos[6].value.length < 3)
+    {
+        setError(6);
+    }
+        else
+    {
+        removeError(6);
+    }
+    }
+
+    function cepValidate(){
+        if(campos[7].value.length !== 8)
+    {
+        setError(7);
+    }
+        else
+    {
+        removeError(7);
+    }
+    }
+
+    function senhaValidate(){
+        if(campos[8].value.length < 8)
+    {
+        setError(8);
+    }
+        else 
+    {
+        removeError(8);
+        confirmacaoValidate();
+    }
+    }
+
+        function confirmacaoValidate(){
+        if(campos[8].value == campos[9].value && campos[9].value.length >= 8)
+        {
+            removeError(9)
+        }
+        else
+        {
+            setError(9)
+        }
+        }
+</script>
+</html>
