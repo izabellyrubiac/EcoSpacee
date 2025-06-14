@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/perfil-adm.css">
+    <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+    <title>EcoSpace</title>
+    
+</head>
+<body>
+    <nav class="navbarr">
+        <img src="imagens/logo.png" alt="logo" class="logo">
+        <div class="lt">
+        <h1 class="logo-text">EcoSpace</h1>
+      </div>
+    </nav>
+    <main>
+        <div id="menu-barra">
+                <button id="open_btn" style="border: none; background: none;" title="Menu">
+                    <img src="imagens/iconemenu.png" alt="menu" id="open_btn_icon">
+                </button>
+                    <div id="barra">
+            
+                        <ul style="list-style-type: none;">
+                            <li>
+                                 <a href="entrar.html">
+                                    <img src="imagens/Group 87.png" alt="icon">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="imagens/Group 63.png" alt="icon">
+                                 </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="imagens/Group 86.png" alt="icon">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="recicladoras.html">
+                                    <img src="imagens/Group 13.png" alt="icon">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="imagens/Group 65.png" alt="icon">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="index.html">
+                                    <img src="imagens/Group 20.png" alt="icon">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+            <section>
+                <div id="perfil">
+                    <div id="perfil-nome-mapa">
+                        <div id="perfil-nome">
+                            <img src="./imagens/foto-de-perfil-fortes.png" alt="foto de perfil" id="foto">
+                                <div id="infos">
+                                        <h1>Fortes Engenharia</h1>
+                                        <br>
+                                        <h2>+55 27 9999-9999</h2>
+                                        <h2>forteseng@outlook.com</h2>
+                                </div>
+                        </div>
+                        <div id="mapa">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.21812034144!2d-40.30962531466167!3d-20.2912368011169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb817e367f19b2f%3A0x78e3f66d34c39917!2sFortes%20Engenharia!5e0!3m2!1spt-BR!2sbr!4v1749864824724!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
+                <div id="descricao">
+                    <p>Sobre:</p>
+                </div>
+            </section>
+    </main>
+
+    <script>
+  const btn = document.getElementById("open_btn");
+  const barra = document.getElementById("barra");
+
+  btn.addEventListener("click", () => {
+    barra.classList.toggle("ativo");
+  });
+</script>
+</body>
+
+</html>
