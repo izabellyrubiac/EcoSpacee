@@ -24,7 +24,7 @@
             
                         <ul style="list-style-type: none;">
                             <li>
-                                 <a href="entrar.html">
+                                 <a href="recicladoras.html">
                                     <img src="imagens/Group 87.png" alt="icon">
                                 </a>
                             </li>
@@ -42,7 +42,7 @@
                             </li>
 
                             <li>
-                                <a href="recicladoras.html">
+                                <a href="#">
                                     <img src="imagens/Group 13.png" alt="icon">
                                 </a>
                             </li>
@@ -65,39 +65,135 @@
             </div>
 
     <main id="container">
-      
-      <div>
-        <h2 id="titulo">Registrar ponto de coleta</h2><br>
-        <section class="registrar">
-              <form action="">
-                      <div id="dados">
-                      <div class="endereco">
-                        <p>Endereço:</p>
-                        <input type="text" name="rua" placeholder="Rua">
-                        <input type="text" name="bairro" placeholder="Bairro">
-                        <input type="text" name="cidade" placeholder="Cidade">
-                      </div><br>
+  <div>
+    <h2 id="titulo">Registrar ponto de coleta</h2><br>
+    <section class="registrar">
+      <form id="form">
+        <div id="dados">
+          <div class="endereco">
+            <p>Endereço:</p>
+            <input type="text" id="rua" name="rua" placeholder="Rua" required>
+            <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
+            <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
+          </div><br>
 
-                      <label for="cep">CEP:</label><br>
-                      <input type="text" id="cep" pattern="\d{5}-?\d{3}" placeholder="00000-000"><br>
-                  </div>
-                
-                
-                  <div class="botoes">
-                    <button type="reset" id="cancelar">Cancelar</button>
-                    <button type="submit" id="salvar">Salvar</button>
-                  </div>
-              </form>
-        </section>
-      </div>
-    </main>
+          <label for="cep">CEP:</label><br>
+          <input type="text" id="cep" pattern="\d{5}-?\d{3}" placeholder="00000-000" required><br>
+        </div>
+
+        <div class="botoes">
+          <button type="reset" id="cancelar">Cancelar</button>
+          <button type="submit" id="salvar">Salvar</button>
+        </div>
+      </form>
+      <table id="tabela">
+      <thead>
+        <tr>
+          <th>Rua</th>
+          <th>Bairro</th>
+          <th>Cidade</th>
+          <th>CEP</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    </section>
+
+    
+  </div>
+</main>
+
 <script>
-  const btn = document.getElementById("open_btn");
+
+const btn = document.getElementById("open_btn");
   const barra = document.getElementById("barra");
 
   btn.addEventListener("click", () => {
     barra.classList.toggle("ativo");
   });
+
+
+  const form = document.getElementById("form");
+  const tabela = document.querySelector("#tabela tbody");
+
+  let pontos = [];
+  let editIndex = null;
+
+  // Carregar do localStorage ao iniciar
+  const dadosSalvos = localStorage.getItem("pontosDeColeta");
+  if (dadosSalvos) {
+    pontos = JSON.parse(dadosSalvos);
+    renderizarTabela();
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const rua = document.getElementById("rua").value;
+    const bairro = document.getElementById("bairro").value;
+    const cidade = document.getElementById("cidade").value;
+    const cep = document.getElementById("cep").value;
+
+    const novoPonto = { rua, bairro, cidade, cep };
+
+    if (editIndex === null) {
+      pontos.push(novoPonto); // Criar
+    } else {
+      pontos[editIndex] = novoPonto; // Atualizar
+      editIndex = null;
+    }
+
+    // Salvar no localStorage
+    localStorage.setItem("pontosDeColeta", JSON.stringify(pontos));
+
+    form.reset();
+    renderizarTabela();
+  });
+
+  function renderizarTabela() {
+    tabela.innerHTML = "";
+
+    pontos.forEach((ponto, index) => {
+      const linha = document.createElement("tr");
+
+      linha.innerHTML = `
+        <td>${ponto.rua}</td>
+        <td>${ponto.bairro}</td>
+        <td>${ponto.cidade}</td>
+        <td>${ponto.cep}</td>
+        <td>
+          <button onclick="editarPonto(${index})">Editar</button>
+          <button onclick="excluirPonto(${index})">Excluir</button>
+        </td>
+      `;
+
+      tabela.appendChild(linha);
+    });
+  }
+
+  window.editarPonto = function(index) {
+    const ponto = pontos[index];
+    document.getElementById("rua").value = ponto.rua;
+    document.getElementById("bairro").value = ponto.bairro;
+    document.getElementById("cidade").value = ponto.cidade;
+    document.getElementById("cep").value = ponto.cep;
+    editIndex = index;
+  }
+
+  window.excluirPonto = function(index) {
+    if (confirm("Deseja excluir este ponto?")) {
+      pontos.splice(index, 1); // Deletar
+
+      // Atualizar localStorage
+      localStorage.setItem("pontosDeColeta", JSON.stringify(pontos));
+
+      renderizarTabela();
+    }
+  }
+
+
 </script>
+
 </body>
 </html>    
